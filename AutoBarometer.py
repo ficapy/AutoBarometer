@@ -27,7 +27,7 @@ def query(y,m,d,h):
     high = temp[1].decode('gbk')
     low = temp[2].decode('gbk')
 
-    #该列表只包含白天晴及阴的状况
+    #将天气情况变成3种情况：晴、阴、雨
     tianqi = output(weather)
 
     if int(h) <= 11:
@@ -133,7 +133,7 @@ if __name__ =='__main__':
         #获取时间
         timelist=time.strftime('%y|%m|%d|%H|%M',time.gmtime(time.time()+28800))
         y,m,d,h,M=[i for i in timelist.split('|')]
-        if 1:
+        try:
             if int(h)==11 or int(h) ==17 or 1:
                 webscreen(y,m,d,h)
                 query(y,m,d,h)
@@ -141,6 +141,8 @@ if __name__ =='__main__':
                 time.sleep(3000)
             else:
                 time.sleep(3000)
+        except Exception:
+            time.sleep(1000)
 
 
 
