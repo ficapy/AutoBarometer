@@ -134,7 +134,7 @@ if __name__ =='__main__':
         timelist=time.strftime('%y|%m|%d|%H|%M',time.gmtime(time.time()+28800))
         y,m,d,h,M=[i for i in timelist.split('|')]
         try:
-            if int(h)==11 or int(h) ==17 or 1:
+            if int(h)==11 or int(h) ==17:
                 webscreen(y,m,d,h)
                 query(y,m,d,h)
                 print u'{}年{}月{}日{}时获取完成'.format(y,m,d,h).encode('utf-8')
